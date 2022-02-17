@@ -1,0 +1,28 @@
+2022-02-17 10:13:57,514 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:13:57,883 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:14:13,561 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:14:13,807 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:15:31,609 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:15:31,909 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:15:31,914 [INFO] request with status: 200
+2022-02-17 10:16:56,595 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:16:56,826 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:16:56,833 [INFO] request with status: 200
+2022-02-17 10:47:56,957 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:47:57,289 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:47:57,295 [INFO] request with status: 200
+2022-02-17 10:48:06,242 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:48:06,601 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:48:06,609 [INFO] request with status: 200
+2022-02-17 10:50:29,156 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:50:29,481 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:50:29,485 [INFO] request with status: 200
+2022-02-17 10:50:46,283 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:50:46,508 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:50:46,517 [INFO] request with status: 200
+2022-02-17 10:51:03,470 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:51:03,715 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:51:03,722 [INFO] request with status: 200
+2022-02-17 10:51:27,581 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 10:51:27,822 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 10:51:27,827 [INFO] request with status: 200
