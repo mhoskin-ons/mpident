@@ -26,3 +26,142 @@
 2022-02-17 10:51:27,581 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
 2022-02-17 10:51:27,822 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
 2022-02-17 10:51:27,827 [INFO] request with status: 200
+2022-02-17 15:49:43,686 [INFO] Starting main process
+2022-02-17 15:53:53,764 [INFO] Starting main process
+2022-02-17 15:54:44,143 [INFO] Starting main process
+2022-02-17 15:54:44,145 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:54:44,420 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:54:44,433 [INFO] request with status: 200
+2022-02-17 15:55:02,103 [INFO] Starting main process
+2022-02-17 15:55:02,105 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:55:02,454 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:55:02,460 [INFO] request with status: 200
+2022-02-17 15:55:02,461 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:55:02,761 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:55:43,331 [INFO] Starting main process
+2022-02-17 15:55:43,332 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:55:43,620 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:55:43,624 [INFO] request with status: 200
+2022-02-17 15:55:43,626 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:55:43,927 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:55:43,996 [INFO] Index(['@Member_Id', '@Dods_Id', '@Pims_Id', '@Clerks_Id', 'DisplayAs',
+       'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House',
+       'MemberFrom', 'HouseStartDate', 'DateOfBirth.@xsi:nil',
+       'DateOfBirth.@xmlns:xsi', 'DateOfDeath.@xsi:nil',
+       'DateOfDeath.@xmlns:xsi', 'Party.@Id', 'Party.#text',
+       'HouseEndDate.@xsi:nil', 'HouseEndDate.@xmlns:xsi', 'CurrentStatus.@Id',
+       'CurrentStatus.@IsActive', 'CurrentStatus.Name', 'CurrentStatus.Reason',
+       'CurrentStatus.StartDate'],
+      dtype='object')
+2022-02-17 15:56:39,061 [INFO] Starting main process
+2022-02-17 15:56:39,063 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:56:39,327 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:56:39,334 [INFO] request with status: 200
+2022-02-17 15:56:39,336 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:56:39,633 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:56:39,702 [INFO] Index(['@Member_Id', '@Dods_Id', '@Pims_Id', '@Clerks_Id', 'DisplayAs',
+       'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House',
+       'MemberFrom', 'HouseStartDate', 'DateOfBirth.@xsi:nil',
+       'DateOfBirth.@xmlns:xsi', 'DateOfDeath.@xsi:nil',
+       'DateOfDeath.@xmlns:xsi', 'Party.@Id', 'Party.#text',
+       'HouseEndDate.@xsi:nil', 'HouseEndDate.@xmlns:xsi', 'CurrentStatus.@Id',
+       'CurrentStatus.@IsActive', 'CurrentStatus.Name', 'CurrentStatus.Reason',
+       'CurrentStatus.StartDate'],
+      dtype='object')
+2022-02-17 15:56:56,625 [INFO] Starting main process
+2022-02-17 15:56:56,627 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:56:56,940 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:56:56,946 [INFO] request with status: 200
+2022-02-17 15:56:56,948 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:56:57,246 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:56:57,321 [INFO] Index(['@Member_Id', '@Dods_Id', '@Pims_Id', '@Clerks_Id', 'DisplayAs',
+       'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House',
+       'MemberFrom', 'HouseStartDate', 'DateOfBirth.@xsi:nil',
+       'DateOfBirth.@xmlns:xsi', 'DateOfDeath.@xsi:nil',
+       'DateOfDeath.@xmlns:xsi', 'Party.@Id', 'Party.#text',
+       'HouseEndDate.@xsi:nil', 'HouseEndDate.@xmlns:xsi', 'CurrentStatus.@Id',
+       'CurrentStatus.@IsActive', 'CurrentStatus.Name', 'CurrentStatus.Reason',
+       'CurrentStatus.StartDate'],
+      dtype='object')
+2022-02-17 15:56:57,322 [INFO] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 15:57:44,863 [INFO] Starting main process
+2022-02-17 15:57:44,864 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:57:45,170 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:57:45,173 [INFO] request with status: 200
+2022-02-17 15:57:45,174 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 15:57:45,391 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 15:57:45,484 [INFO] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 15:57:45,484 [INFO] ['a,b,c']
+2022-02-17 16:07:04,777 [INFO] Starting main process
+2022-02-17 16:07:04,779 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:07:05,102 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:07:05,108 [INFO] request with status: 200
+2022-02-17 16:07:21,416 [INFO] Starting main process
+2022-02-17 16:07:21,417 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:07:21,690 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:07:21,698 [INFO] request with status: 200
+2022-02-17 16:07:21,701 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:07:21,976 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:07:22,106 [INFO] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 16:07:22,107 [INFO] ['a,b,c']
+2022-02-17 16:07:46,452 [INFO] Starting main process
+2022-02-17 16:07:46,454 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:07:46,677 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:07:46,682 [INFO] request with status: 200
+2022-02-17 16:07:46,683 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:07:46,983 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:07:47,061 [INFO] (649, 25)
+2022-02-17 16:07:47,062 [INFO] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 16:07:47,062 [INFO] (649, 11)
+2022-02-17 16:07:47,062 [INFO] ['a,b,c']
+2022-02-17 16:08:05,570 [INFO] Starting main process
+2022-02-17 16:08:05,572 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:08:05,825 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:08:05,830 [INFO] request with status: 200
+2022-02-17 16:08:05,831 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:08:06,132 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:08:06,205 [DEBUG] (649, 25)
+2022-02-17 16:08:06,206 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 16:08:06,206 [DEBUG] (649, 11)
+2022-02-17 16:08:06,206 [DEBUG] ['a,b,c']
+2022-02-17 16:08:30,724 [INFO] Starting main process
+2022-02-17 16:08:30,726 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:08:31,016 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:08:31,023 [INFO] request with status: 200
+2022-02-17 16:08:31,026 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:08:31,425 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:08:31,495 [DEBUG] (649, 25)
+2022-02-17 16:08:31,496 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 16:08:31,497 [DEBUG] (649, 11)
+2022-02-17 16:08:31,497 [DEBUG] ['a', 'b', 'c']
+2022-02-17 16:13:36,147 [INFO] Starting main process
+2022-02-17 16:13:36,148 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:13:36,580 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:13:36,586 [INFO] request with status: 200
+2022-02-17 16:13:36,586 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-17 16:13:36,588 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-17 16:13:36,841 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-17 16:13:36,959 [DEBUG] (649, 25)
+2022-02-17 16:13:36,960 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-17 16:13:36,960 [DEBUG] (649, 11)
