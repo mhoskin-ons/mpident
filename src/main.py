@@ -8,6 +8,18 @@ import json
 import os
 import datetime as dt
 
+def cfg_get_dict(config: configparser.ConfigParser,
+                 section: str,
+                 variable: str):
+
+    logging.debug('Parsing config value as a dict: {0}:{1}'.format(section,
+                                                                   variable))
+    value = config[section][variable]
+    init_split = value.split(',')
+    split_pairs = [pair.split(': ') for pair in init_split]
+    dict_value = {k.strip(): v.strip() for k,v in split_pairs}
+
+    return dict_value
 
 def cfg_get_list(config: configparser.ConfigParser,
                  section: str,
@@ -43,12 +55,23 @@ def cfg_get_list(config: configparser.ConfigParser,
     return value_list
 
 
+def raise_request(url, headers):
+
+    r = requests.get(url, headers)
+
+    if r.status_code != 200:
+        logging.warning('Error code {0} from {1}'.format(r.status_code, url))
+        r = None
+
+    return r
+
+
 def main(config: configparser.ConfigParser):
 
     logging.info('Starting main process')
-    url = config['PARSER']['url']
+    url = config['PARSER']['members_url']
     # response = requests.get("http://data.parliament.uk/membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/")
-    r = requests.get(url, headers={"Accept": 'application/json'})
+    r = requests.get(url, headers=cfg_get_dict(config, 'PARSER','headers'))
     logging.info('request with status: {0}'.format(r.status_code))
     # print(type(response))
     # print(response.content)
@@ -71,7 +94,6 @@ def main(config: configparser.ConfigParser):
 
     test_url = 'http://data.parliament.uk/membersdataplatform/services/mnis/HouseOverview/Commons/2012-01-01'
 
-    r = requests.get(url, headers={'Accept': 'application/json'})
     r.encoding = 'utf-8-sig'
     data = r.json()
     with open('mps.json', 'w') as f:
@@ -82,6 +104,11 @@ def main(config: configparser.ConfigParser):
     core_mp_data = expanded_table[mp_cols]
     logging.debug(core_mp_data.columns)
     logging.debug(core_mp_data.shape)
+
+    pd.set_option("display.max_columns", None)
+    print(core_mp_data.head())
+
+    get_head_shots(config, core_mp_data)
 
 
 def write_to_json(r: requests.Response,
@@ -119,6 +146,61 @@ def write_to_json(r: requests.Response,
     else:
         logging.warning('Dump failed. Status unknown - File does not exist.')
 
+def get_head_shots(config, data):
+
+    logging.info('Beginning headshot api scrape.')
+
+    base_image_url = config['PARSER']['image_base_url']
+    hex_dict = cfg_get_dict(config, 'PARSER', 'image_bytes')
+
+    for index, row in data.iterrows():
+        id = row['@Member_Id']
+
+        name = row['ListAs']
+        logging.debug('Storing image for {0}_{1}'.format(name, id))
+        clean_name = name.replace(' ', '_').replace(',', '')
+
+        member_url = base_image_url + id
+
+        r = requests.get(member_url)
+        if r.status_code == 200:
+            image_config = config['PARSER']['headshot_type']
+
+            # use image_config value or get from headers
+            if image_config == 'GET':
+                headshot_header_type = r.headers['Content-Type'].split('/')[-1]
+                logging.debug('Header suggests {0} filetype'.format(
+                    headshot_header_type))
+
+                initial_hex = r.content.hex()[:2]
+
+                if initial_hex in hex_dict.keys():
+                    headshot_hex = hex_dict[initial_hex]
+                    logging.debug('Bytes suggests {0} filetype'.format(
+                        headshot_hex))
+
+                    if headshot_hex != headshot_header_type:
+                        logging.warning('Mismatched type. Defaulting to '
+                                        'bytes value')
+                    headshot_type = headshot_hex
+                else:
+                    headshot_type = headshot_header_type
+
+            else:
+                headshot_type = image_config
+
+            image_location = "../headshots/{0}_{1}.{2}".format(clean_name,
+                                                               id,
+                                                               headshot_type)
+
+            with open(image_location, 'wb') as f:
+                logging.debug('Writing to {0}'.format(image_location))
+                f.write(r.content)
+
+        else:
+            logging.warning('Received status code {0} for {1}. File not '
+                            'downloaded'.format(r.status_code, clean_name))
+
 
 if __name__ == "__main__":
 
@@ -131,5 +213,8 @@ if __name__ == "__main__":
         handlers=[logging.StreamHandler(),
                   logging.FileHandler(config['LOGGING']['file'])]
     )
+    logging.info('begin')
 
     main(config)
+
+    logging.info('fin')
