@@ -8,59 +8,80 @@ import json
 import os
 import datetime as dt
 
-def cfg_get_dict(config: configparser.ConfigParser,
-                 section: str,
-                 variable: str):
+from src.config_tools import *
 
-    logging.debug('Parsing config value as a dict: {0}:{1}'.format(section,
-                                                                   variable))
-    value = config[section][variable]
-    init_split = value.split(',')
-    split_pairs = [pair.split(': ') for pair in init_split]
-    dict_value = {k.strip(): v.strip() for k,v in split_pairs}
+# def cfg_get_dict(config: configparser.ConfigParser,
+#                  section: str,
+#                  variable: str):
+#
+#     logging.debug('Parsing config value as a dict: {0}:{1}'.format(section,
+#                                                                    variable))
+#     value = config[section][variable]
+#     init_split = value.split(',')
+#     split_pairs = [pair.split(': ') for pair in init_split]
+#     dict_value = {k.strip(): v.strip() for k,v in split_pairs}
+#
+#     return dict_value
+#
+# def cfg_get_list(config: configparser.ConfigParser,
+#                  section: str,
+#                  variable: str,
+#                  cast: Callable = str):
+#     """
+#     Parses a configparser list value. Splits by comma, clears whitespace,
+#     and casts elements to appropriate data type.
+#
+#     Parameters
+#     ----------
+#     config: configparser.ConfigParser
+#         object containing contents of config file
+#     section: str
+#         Section of config file to explore
+#     variable: str
+#         Name of key within section to read
+#     cast: Callable
+#         Specific function to cast by.
+#         The default is str
+#
+#     Returns
+#     -------
+#     value_list: list
+#         List containing elements of config value.
+#     """
+#     logging.debug('Parsing config value as a list: {0}:{1}'.format(section,
+#                                                                    variable))
+#     value = config[section][variable]
+#     value_list = value.split(',')
+#     value_list = [cast(v.strip()) for v in value_list]
+#
+#     return value_list
 
-    return dict_value
 
-def cfg_get_list(config: configparser.ConfigParser,
-                 section: str,
-                 variable: str,
-                 cast: Callable = str):
+def raise_request(url: str, headers: dict = None) -> requests.Response:
     """
-    Parses a configparser list value. Splits by comma, clears whitespace,
-    and casts elements to appropriate data type.
 
     Parameters
     ----------
-    config: configparser.ConfigParser
-        object containing contents of config file
-    section: str
-        Section of config file to explore
-    variable: str
-        Name of key within section to read
-    cast: Callable
-        Specific function to cast by.
-        The default is str
+    url: str
+        Address to access
+    headers: dict
+        Header values to pass into requests.get to alter the response from
+        the url
+        The default is None
 
     Returns
     -------
-    value_list: list
-        List containing elements of config value.
+    requests.Response
+        Response object for url to pull data etc from.
+
     """
-    logging.debug('Parsing config value as a list: {0}:{1}'.format(section,
-                                                                   variable))
-    value = config[section][variable]
-    value_list = value.split(',')
-    value_list = [cast(v.strip()) for v in value_list]
-
-    return value_list
-
-
-def raise_request(url, headers):
-
-    r = requests.get(url, headers)
+    r = requests.get(url, headers=headers)
 
     if r.status_code != 200:
-        logging.warning('Error code {0} from {1}'.format(r.status_code, url))
+        logging.warning('Error code {0} from {1}. Processes will '
+                        'attempt to continue without this request, '
+                        'but no assurance can be made about future '
+                        'states'.format(r.status_code, url))
         r = None
 
     return r
@@ -71,7 +92,7 @@ def main(config: configparser.ConfigParser):
     logging.info('Starting main process')
     url = config['PARSER']['members_url']
     # response = requests.get("http://data.parliament.uk/membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/")
-    r = requests.get(url, headers=cfg_get_dict(config, 'PARSER','headers'))
+    r = requests.get(url, headers=cfg_get_dict(config, 'PARSER', 'headers'))
     logging.info('request with status: {0}'.format(r.status_code))
     # print(type(response))
     # print(response.content)
@@ -108,7 +129,7 @@ def main(config: configparser.ConfigParser):
     pd.set_option("display.max_columns", None)
     print(core_mp_data.head())
 
-    get_head_shots(config, core_mp_data)
+    # get_head_shots(config, core_mp_data)
 
 
 def write_to_json(r: requests.Response,
