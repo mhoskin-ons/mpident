@@ -15219,3 +15219,109 @@
 2022-02-18 11:57:44,823 [DEBUG] Bytes suggests bmp filetype
 2022-02-18 11:57:44,823 [WARNING] Mismatched type. Defaulting to bytes value
 2022-02-18 11:57:44,823 [DEBUG] Writing to ../headshots/Zeichner_Daniel_4382.bmp
+2022-02-21 15:19:35,988 [INFO] begin
+2022-02-21 15:19:35,989 [INFO] Starting main process
+2022-02-21 15:19:35,989 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-21 15:19:35,991 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-21 15:19:36,291 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-21 15:19:36,297 [INFO] request with status: 200
+2022-02-21 15:19:36,297 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-21 15:19:36,366 [DEBUG] (649, 25)
+2022-02-21 15:19:36,370 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-21 15:19:36,370 [DEBUG] (649, 11)
+2022-02-21 15:19:36,376 [INFO] fin
+2022-02-21 15:41:39,673 [INFO] begin
+2022-02-21 15:41:39,673 [INFO] Starting main process
+2022-02-21 15:41:39,673 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-21 15:41:39,675 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-21 15:41:39,914 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-21 15:41:39,924 [INFO] request with status: 200
+2022-02-21 15:41:39,924 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-21 15:41:39,987 [DEBUG] (649, 25)
+2022-02-21 15:41:39,988 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-21 15:41:39,988 [DEBUG] (649, 11)
+2022-02-21 15:41:39,992 [INFO] fin
+2022-02-21 15:45:23,042 [INFO] begin
+2022-02-21 15:45:23,042 [INFO] Starting main process
+2022-02-21 15:45:23,042 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-21 15:45:23,044 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-21 15:45:23,589 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-21 15:45:23,895 [INFO] request with status: 200
+2022-02-21 15:45:23,895 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-21 15:45:23,959 [DEBUG] (649, 25)
+2022-02-21 15:45:23,960 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-21 15:45:23,960 [DEBUG] (649, 11)
+2022-02-21 15:45:23,964 [INFO] fin
+2022-02-21 16:05:10,137 [INFO] begin
+2022-02-21 16:05:10,137 [INFO] Starting main process
+2022-02-21 16:05:10,137 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-21 16:05:10,139 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-21 16:05:10,399 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-21 16:05:10,411 [INFO] request with status: 200
+2022-02-21 16:05:10,411 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-21 16:05:10,476 [DEBUG] (649, 25)
+2022-02-21 16:05:10,477 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-21 16:05:10,478 [DEBUG] (649, 11)
+2022-02-21 16:05:10,482 [INFO] fin
+2022-02-21 16:05:29,920 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:05:44,228 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:05:58,038 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:06:28,293 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:06:32,616 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:06:32,616 [ERROR] mps.json file not         found. Run code to download data from api and write to file first.
+2022-02-21 16:12:54,751 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:13:06,960 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:13:06,960 [ERROR] mps.json file not found. Run code to download data from api and write to file first.
+2022-02-21 16:15:22,049 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:15:50,850 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:15:50,861 [INFO] Beginning headshot api scrape.
+2022-02-21 16:15:50,861 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:15:50,861 [INFO] dict:
+2022-02-21 16:16:00,341 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:16:00,351 [INFO] Beginning headshot api scrape.
+2022-02-21 16:16:00,351 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:16:00,351 [INFO] dict:
+2022-02-21 16:16:07,573 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:16:07,582 [INFO] Beginning headshot api scrape.
+2022-02-21 16:16:07,583 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:16:07,583 [INFO] dict:
+2022-02-21 16:16:31,780 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:16:31,790 [INFO] Beginning headshot api scrape.
+2022-02-21 16:16:31,790 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:16:31,790 [INFO] dict:
+2022-02-21 16:16:46,894 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:16:46,905 [INFO] Beginning headshot api scrape.
+2022-02-21 16:16:46,905 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:16:46,905 [INFO] dict:dict_keys(['42', '47', '89', 'ff'])
+2022-02-21 16:16:52,956 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:16:52,967 [INFO] Beginning headshot api scrape.
+2022-02-21 16:16:52,967 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:16:52,967 [INFO] dict:dict_keys(['42', '47', '89', 'ff'])
+2022-02-21 16:17:37,150 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:17:37,150 [ERROR] ../data/mps.json file not found. Run code to download data from apiand write to file first.
+2022-02-21 16:17:45,593 [INFO] Beginning standalone head shot request. Requires mps.json to be found in the data folder.
+2022-02-21 16:17:45,604 [INFO] Beginning headshot api scrape.
+2022-02-21 16:17:45,604 [DEBUG] Parsing config value as a dict: HEADSHOTS:image_bytes
+2022-02-21 16:17:45,604 [INFO] dict:dict_keys(['42', '47', '89', 'ff'])
+2022-02-21 17:05:57,897 [INFO] Beginning config demonstration
+2022-02-21 17:05:57,897 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-21 17:05:57,898 [DEBUG] Example list: ['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id', 'Party.#text']
+2022-02-21 17:05:57,898 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-21 17:05:57,898 [DEBUG] Example dict: keys: dict_keys(['Accept']), values: dict_keys(['Accept'])
+2022-02-21 17:06:16,828 [INFO] Beginning config demonstration
+2022-02-21 17:06:16,828 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-21 17:06:16,828 [DEBUG] Example list: ['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id', 'Party.#text']
+2022-02-21 17:06:16,828 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-21 17:06:16,828 [DEBUG] Example dict: keys: dict_keys(['Accept']), values: dict_values(['application/json'])
