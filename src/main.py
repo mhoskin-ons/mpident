@@ -167,61 +167,6 @@ def write_to_json(r: requests.Response,
     else:
         logging.warning('Dump failed. Status unknown - File does not exist.')
 
-def get_head_shots(config, data):
-
-    logging.info('Beginning headshot api scrape.')
-
-    base_image_url = config['PARSER']['image_base_url']
-    hex_dict = cfg_get_dict(config, 'PARSER', 'image_bytes')
-
-    for index, row in data.iterrows():
-        id = row['@Member_Id']
-
-        name = row['ListAs']
-        logging.debug('Storing image for {0}_{1}'.format(name, id))
-        clean_name = name.replace(' ', '_').replace(',', '')
-
-        member_url = base_image_url + id
-
-        r = requests.get(member_url)
-        if r.status_code == 200:
-            image_config = config['PARSER']['headshot_type']
-
-            # use image_config value or get from headers
-            if image_config == 'GET':
-                headshot_header_type = r.headers['Content-Type'].split('/')[-1]
-                logging.debug('Header suggests {0} filetype'.format(
-                    headshot_header_type))
-
-                initial_hex = r.content.hex()[:2]
-
-                if initial_hex in hex_dict.keys():
-                    headshot_hex = hex_dict[initial_hex]
-                    logging.debug('Bytes suggests {0} filetype'.format(
-                        headshot_hex))
-
-                    if headshot_hex != headshot_header_type:
-                        logging.warning('Mismatched type. Defaulting to '
-                                        'bytes value')
-                    headshot_type = headshot_hex
-                else:
-                    headshot_type = headshot_header_type
-
-            else:
-                headshot_type = image_config
-
-            image_location = "../headshots/{0}_{1}.{2}".format(clean_name,
-                                                               id,
-                                                               headshot_type)
-
-            with open(image_location, 'wb') as f:
-                logging.debug('Writing to {0}'.format(image_location))
-                f.write(r.content)
-
-        else:
-            logging.warning('Received status code {0} for {1}. File not '
-                            'downloaded'.format(r.status_code, clean_name))
-
 
 if __name__ == "__main__":
 
