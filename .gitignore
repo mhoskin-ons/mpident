@@ -1,11 +1,16 @@
 .idea/
+*/__pycache__/*
+
+*.txt
 *.xml
 *.csv
 *.json
+
 *.bmp
 *.jpeg
 *.png
 *.gif
 *.jpg
-data/
+
 !data/identifiers.csv
+data/*
