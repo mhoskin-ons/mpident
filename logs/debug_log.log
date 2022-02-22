@@ -15325,3 +15325,257 @@
 2022-02-21 17:06:16,828 [DEBUG] Example list: ['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id', 'Party.#text']
 2022-02-21 17:06:16,828 [DEBUG] Parsing config value as a dict: PARSER:headers
 2022-02-21 17:06:16,828 [DEBUG] Example dict: keys: dict_keys(['Accept']), values: dict_values(['application/json'])
+2022-02-22 10:16:09,350 [INFO] Beginning config demonstration
+2022-02-22 10:16:09,351 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:16:09,351 [DEBUG] Example list: ['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName', 'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id', 'Party.#text']
+2022-02-22 10:16:09,351 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:16:09,351 [DEBUG] Example dict: keys: dict_keys(['Accept']), values: dict_values(['application/json'])
+2022-02-22 10:16:16,092 [INFO] begin
+2022-02-22 10:16:16,092 [INFO] Starting main process
+2022-02-22 10:16:16,092 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:16:16,094 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 10:16:16,377 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 10:16:16,457 [INFO] request with status: 200
+2022-02-22 10:16:16,457 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:16:16,525 [DEBUG] (649, 25)
+2022-02-22 10:16:16,528 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 10:16:16,529 [DEBUG] (649, 11)
+2022-02-22 10:16:16,533 [INFO] fin
+2022-02-22 10:18:34,434 [INFO] begin
+2022-02-22 10:18:34,434 [INFO] Starting main process
+2022-02-22 10:18:34,434 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:18:34,436 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 10:18:34,628 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 10:18:34,682 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:18:34,682 [INFO] Dumping to data/mps.json
+2022-02-22 10:19:08,185 [INFO] begin
+2022-02-22 10:19:08,185 [INFO] Starting main process
+2022-02-22 10:19:08,185 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:19:08,187 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 10:19:08,488 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 10:19:08,494 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:19:08,494 [INFO] Dumping to /data/mps.json
+2022-02-22 10:19:28,587 [INFO] begin
+2022-02-22 10:19:28,587 [INFO] Starting main process
+2022-02-22 10:19:28,587 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:19:28,589 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 10:19:28,806 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 10:19:28,821 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:19:28,821 [INFO] Dumping to ../data/mps.json
+2022-02-22 10:19:28,849 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 10:19:28.846947.
+2022-02-22 10:33:20,458 [INFO] begin
+2022-02-22 10:33:20,458 [INFO] Starting main process
+2022-02-22 10:33:20,458 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:33:20,459 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 10:33:20,772 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 10:33:20,778 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:33:20,778 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 10:33:20,784 [INFO] Dumping to ../data/mps.json
+2022-02-22 10:33:30,410 [INFO] begin
+2022-02-22 10:33:30,411 [INFO] Starting main process
+2022-02-22 10:33:30,411 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 10:33:30,412 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 10:33:30,704 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 10:33:30,713 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 10:33:30,713 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 10:33:30,719 [INFO] Dumping to data/mps.json
+2022-02-22 10:33:30,745 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 10:33:30.741430.
+2022-02-22 10:33:30,780 [DEBUG] (649, 25)
+2022-02-22 10:33:30,780 [DEBUG] Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 10:33:30,781 [DEBUG] (649, 11)
+2022-02-22 10:33:30,784 [INFO] fin
+2022-02-22 15:33:03,015 [INFO] begin
+2022-02-22 15:33:03,015 [INFO] Starting main process
+2022-02-22 15:33:03,015 [DEBUG] Getting data from file
+2022-02-22 15:33:03,027 [DEBUG] Found full mp data of shape: (1, 1)
+2022-02-22 15:33:03,027 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 15:33:39,883 [INFO] begin
+2022-02-22 15:33:39,883 [INFO] Starting main process
+2022-02-22 15:33:39,885 [DEBUG] Getting data from file
+2022-02-22 15:33:39,904 [DEBUG] Found full mp data of shape: (1, 1)
+2022-02-22 15:33:39,904 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 15:40:15,843 [INFO] begin
+2022-02-22 15:40:15,844 [INFO] Starting main process
+2022-02-22 15:40:15,844 [DEBUG] Getting data from file
+2022-02-22 15:40:16,079 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 15:40:16,079 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 15:40:23,769 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 15:40:23,769 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 15:40:23,775 [DEBUG] Adding characteristic data to core data
+2022-02-22 15:40:23,776 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 15:40:32,336 [INFO] begin
+2022-02-22 15:40:32,336 [INFO] Starting main process
+2022-02-22 15:40:32,336 [DEBUG] Getting data from file
+2022-02-22 15:40:32,383 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 15:40:32,383 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 15:40:32,384 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 15:40:32,384 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 15:40:32,386 [DEBUG] Adding characteristic data to core data
+2022-02-22 15:40:32,386 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 15:41:06,804 [INFO] begin
+2022-02-22 15:41:06,804 [INFO] Starting main process
+2022-02-22 15:41:06,804 [DEBUG] Getting data from file
+2022-02-22 15:41:07,027 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 15:41:07,028 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 15:41:07,030 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 15:41:07,030 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 15:41:07,034 [DEBUG] Adding characteristic data to core data
+2022-02-22 15:41:22,750 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 15:52:33,711 [INFO] begin
+2022-02-22 15:52:33,711 [INFO] Starting main process
+2022-02-22 15:52:33,711 [DEBUG] Getting data from file
+2022-02-22 15:52:53,827 [INFO] begin
+2022-02-22 15:52:53,827 [INFO] Starting main process
+2022-02-22 15:52:53,828 [DEBUG] Getting data from file
+2022-02-22 15:53:02,333 [INFO] begin
+2022-02-22 15:53:02,334 [INFO] Starting main process
+2022-02-22 15:53:02,334 [DEBUG] Getting data from file
+2022-02-22 15:53:32,791 [INFO] begin
+2022-02-22 15:53:32,792 [INFO] Starting main process
+2022-02-22 15:53:32,792 [DEBUG] Getting data from file
+2022-02-22 16:05:32,292 [INFO] begin
+2022-02-22 16:05:32,292 [INFO] Starting main process
+2022-02-22 16:05:32,292 [DEBUG] Getting data from file
+2022-02-22 16:05:32,332 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:05:32,332 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:05:32,333 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:05:32,333 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:05:32,335 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:05:32,335 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:06:04,159 [INFO] begin
+2022-02-22 16:06:04,159 [INFO] Starting main process
+2022-02-22 16:06:04,159 [DEBUG] Getting data from api
+2022-02-22 16:06:04,159 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 16:06:04,161 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 16:06:04,507 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 16:06:04,513 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 16:06:04,518 [INFO] Dumping to data/mps.json
+2022-02-22 16:06:04,544 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 16:06:04.539672.
+2022-02-22 16:06:04,579 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:06:04,580 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:06:04,580 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:06:04,581 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:06:04,583 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:06:04,583 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:10:38,942 [INFO] begin
+2022-02-22 16:10:38,943 [INFO] Starting main process
+2022-02-22 16:10:38,943 [DEBUG] Getting data from api
+2022-02-22 16:10:38,943 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 16:10:38,944 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 16:10:39,240 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 16:10:39,262 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 16:10:39,268 [INFO] Dumping to data/mps.json
+2022-02-22 16:10:39,295 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 16:10:39.290200.
+2022-02-22 16:10:39,295 [INFO] <class 'list'>
+2022-02-22 16:10:39,330 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:10:39,331 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:10:39,331 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:10:39,331 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:10:39,334 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:10:39,334 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:10:58,844 [INFO] begin
+2022-02-22 16:10:58,844 [INFO] Starting main process
+2022-02-22 16:10:58,844 [DEBUG] Getting data from api
+2022-02-22 16:10:58,844 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 16:10:58,852 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 16:10:59,117 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 16:10:59,125 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 16:10:59,130 [INFO] Dumping to data/mps.json
+2022-02-22 16:11:01,726 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 16:11:01.722404.
+2022-02-22 16:11:05,701 [INFO] <class 'list'>
+2022-02-22 16:11:54,247 [INFO] begin
+2022-02-22 16:11:54,247 [INFO] Starting main process
+2022-02-22 16:11:54,247 [DEBUG] Getting data from api
+2022-02-22 16:11:54,247 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 16:11:54,249 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 16:11:54,500 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 16:11:54,515 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 16:11:54,521 [INFO] Dumping to data/mps.json
+2022-02-22 16:11:54,547 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 16:11:54.542881.
+2022-02-22 16:11:54,547 [INFO] <class 'list'>
+2022-02-22 16:12:08,517 [INFO] begin
+2022-02-22 16:12:08,517 [INFO] Starting main process
+2022-02-22 16:12:08,517 [DEBUG] Getting data from api
+2022-02-22 16:12:08,517 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-02-22 16:12:08,519 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-02-22 16:12:08,694 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-02-22 16:12:08,706 [DEBUG] Converting response data to json style data as a dict
+2022-02-22 16:12:08,713 [INFO] Dumping to data/mps.json
+2022-02-22 16:12:08,739 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-02-22 16:12:08.735009.
+2022-02-22 16:12:08,739 [INFO] <class 'list'>
+2022-02-22 16:12:08,777 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:12:08,777 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:12:08,778 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:12:08,778 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:12:08,780 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:12:08,780 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:12:08,796 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-22 16:12:08,796 [INFO] fin
+2022-02-22 16:14:24,008 [INFO] begin
+2022-02-22 16:14:24,008 [INFO] Starting main process
+2022-02-22 16:14:24,008 [DEBUG] Getting data from file
+2022-02-22 16:14:24,049 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:14:24,049 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:14:24,050 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:14:24,050 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:14:24,052 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:14:24,052 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:14:24,062 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-22 16:14:24,063 [INFO] fin
+2022-02-22 16:14:50,528 [INFO] begin
+2022-02-22 16:14:50,528 [INFO] Starting main process
+2022-02-22 16:14:50,529 [DEBUG] Getting data from file
+2022-02-22 16:14:50,753 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:14:50,753 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:14:50,756 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:14:50,756 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:14:50,761 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:15:42,767 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:15:49,789 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:27:05,377 [INFO] begin
+2022-02-22 16:27:05,377 [INFO] Starting main process
+2022-02-22 16:27:05,377 [DEBUG] Getting data from file
+2022-02-22 16:27:05,416 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-22 16:27:05,417 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-22 16:27:05,417 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-22 16:27:05,418 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-22 16:27:05,420 [DEBUG] Adding characteristic data to core data
+2022-02-22 16:27:05,420 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-22 16:27:05,430 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-22 16:27:05,430 [INFO] fin

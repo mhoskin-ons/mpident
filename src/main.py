@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 
-from typing import Callable
 import configparser
 import logging
 import json
@@ -10,61 +9,15 @@ import datetime as dt
 
 from src.config_tools import *
 
-# def cfg_get_dict(config: configparser.ConfigParser,
-#                  section: str,
-#                  variable: str):
-#
-#     logging.debug('Parsing config value as a dict: {0}:{1}'.format(section,
-#                                                                    variable))
-#     value = config[section][variable]
-#     init_split = value.split(',')
-#     split_pairs = [pair.split(': ') for pair in init_split]
-#     dict_value = {k.strip(): v.strip() for k,v in split_pairs}
-#
-#     return dict_value
-#
-# def cfg_get_list(config: configparser.ConfigParser,
-#                  section: str,
-#                  variable: str,
-#                  cast: Callable = str):
-#     """
-#     Parses a configparser list value. Splits by comma, clears whitespace,
-#     and casts elements to appropriate data type.
-#
-#     Parameters
-#     ----------
-#     config: configparser.ConfigParser
-#         object containing contents of config file
-#     section: str
-#         Section of config file to explore
-#     variable: str
-#         Name of key within section to read
-#     cast: Callable
-#         Specific function to cast by.
-#         The default is str
-#
-#     Returns
-#     -------
-#     value_list: list
-#         List containing elements of config value.
-#     """
-#     logging.debug('Parsing config value as a list: {0}:{1}'.format(section,
-#                                                                    variable))
-#     value = config[section][variable]
-#     value_list = value.split(',')
-#     value_list = [cast(v.strip()) for v in value_list]
-#
-#     return value_list
-
 
 def raise_request(url: str, headers: dict = None) -> requests.Response:
     """
 
     Parameters
     ----------
-    url: str
+    url : str
         Address to access
-    headers: dict
+    headers : dict
         Header values to pass into requests.get to alter the response from
         the url
         The default is None
@@ -72,7 +25,7 @@ def raise_request(url: str, headers: dict = None) -> requests.Response:
     Returns
     -------
     requests.Response
-        Response object for url to pull data etc from.
+        Response object for url to pull data etc. from.
 
     """
     r = requests.get(url, headers=headers)
@@ -87,74 +40,51 @@ def raise_request(url: str, headers: dict = None) -> requests.Response:
     return r
 
 
-def main(config: configparser.ConfigParser):
+def jsonify_response(r: requests.Response, encoding: str = 'utf-8-sig'):
+    """
+    Takes a requests.Response object, encodes to utf-8-sig by default,
+    and returns a dictionary containing the data in a json format
 
-    logging.info('Starting main process')
-    url = config['PARSER']['members_url']
-    # response = requests.get("http://data.parliament.uk/membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/")
-    r = requests.get(url, headers=cfg_get_dict(config, 'PARSER', 'headers'))
-    logging.info('request with status: {0}'.format(r.status_code))
-    # print(type(response))
-    # print(response.content)
+    Parameters
+    ----------
+    r : requests.Response
+        Response object from requests module, containing json data.
+    encoding : str
+        Specific encoding for received data.
+        The default is 'utf-8-sig'.
 
-    # root = ET.fromstring(response.text)
-    # tree = ET.ElementTree(root)
-    # #tree.write('raw_output.xml')
-
-    # mp_data = pd.read_xml(response.content, parser='etree')
-
-    # core_mp_data = mp_data[]
-
-    # print(type(config['PARSER']['test']))
-    mp_cols = cfg_get_list(config, 'PARSER', 'mp_cols')
-    # mp_cols = config['PARSER']['mp_cols'].split(',\n')
-    # 'http://data.parliament.uk/membersdataplatform/services/mnis/members' \
-    # '/query/membership=all|commonsmemberbetween=2015-03-01and2022-02-17/'
-    # core_mp_data = mp_data[mp_cols]
-    # return response
-
-    test_url = 'http://data.parliament.uk/membersdataplatform/services/mnis/HouseOverview/Commons/2012-01-01'
-
-    r.encoding = 'utf-8-sig'
+    Returns
+    -------
+    tuple(data, r)
+        Data is the contents converted to a json format - stored in a
+        dictionary several levels deep.
+        r is the requests.Response value (encoded)
+    """
+    logging.debug('Converting response data to json style data as a dict')
+    r.encoding = encoding
     data = r.json()
-    with open('mps.json', 'w') as f:
-        json.dump(data, f, indent=2)
 
-    expanded_table = pd.json_normalize(data['Members']['Member'], max_level=1)
-    logging.debug(expanded_table.shape)
-    core_mp_data = expanded_table[mp_cols]
-    logging.debug(core_mp_data.columns)
-    logging.debug(core_mp_data.shape)
-
-    pd.set_option("display.max_columns", None)
-    print(core_mp_data.head())
-
-    # get_head_shots(config, core_mp_data)
+    return data, r
 
 
-def write_to_json(r: requests.Response,
+def write_to_json(data: dict,
                   file_name: str,
-                  encoding: str = 'utf-8-sig',
                   write_mode: str = 'w'):
     """
     Takes Response, encodes, pulls out data as json and writes to file
     Parameters
     ----------
-    r: requests.Response
-        Response object from requests module
+    data: dict
+        Response data converted to a dict storing json style data
     file_name: str
         File name to write out data as.
-    encoding: str
-        Specific encoding for received data.
-        The default is 'utf-8-sig
     write_mode: str
         Opens file_name in specific mode.
         The default is 'w'
     """
 
     logging.info('Dumping to {0}'.format(file_name))
-    r.encoding = encoding
-    data = r.json()
+
     with open(file_name, write_mode) as f:
         json.dump(data, f, indent=2)
 
@@ -168,10 +98,154 @@ def write_to_json(r: requests.Response,
         logging.warning('Dump failed. Status unknown - File does not exist.')
 
 
+def get_characteristics():
+    """
+    Reads the manually created characteristic data.
+    Returns
+    -------
+    pd.DataFrame
+        Characteristic data read from file
+    """
+    logging.debug('Reading characteristic data from {0}'.format(
+        config['PARSER']['characteristic_path']))
+
+    characteristic_data = pd.read_csv(config['PARSER']['characteristic_path'])
+
+    return characteristic_data
+
+
+def report_missing_characteristics(missing_characteristics: pd.DataFrame):
+    """
+    Takes a dataframe which is missing matching characteristics, and writes
+    the details to a file.
+
+    Parameters
+    ----------
+    missing_characteristics : pd.DataFrame
+        DataFrame of records missing from characteristic data.
+    """
+    logging.warning("Missing characteristics for {0} MPs in {1}".format(
+        len(missing_characteristics), config['PARSER']['characteristic_path']))
+
+    now = dt.datetime.now().isoformat()
+    warn_path = "logs/missing_identifiers.csv".format(now)
+    logging.warning("Writing details of missing data to {0}".format(warn_path))
+
+    key_details = missing_characteristics[['@Member_Id', 'DisplayAs', 'ListAs',
+                                           'MemberFrom', 'Party.#text']]
+    key_details.insert(0, 'timestamp', now)
+    key_details.insert(1, 'missing', 'identifiers.csv')
+
+    key_details.to_csv(warn_path, index=False)
+
+
+def add_characteristics(member_data: pd.DataFrame,
+                        characteristic_data: pd.DataFrame):
+
+    logging.debug('Adding characteristic data to core data')
+
+    member_data = pd.merge(member_data, characteristic_data,
+                           on=cfg_get_list(config, 'PARSER',
+                                           'characteristic_merge'),
+                           how='left', indicator=True)
+
+    missing_characteristics = member_data[member_data['_merge'] == 'False']
+
+    if not missing_characteristics.empty:
+        report_missing_characteristics(missing_characteristics)
+
+    return member_data
+
+
+def json_to_pd(json_data: list, cols: dict, max_level=1):
+
+    pd_data = pd.json_normalize(json_data, max_level=1)
+
+    for col, col_type in cols.items():
+        pd_data[col] = pd_data[col].astype(col_type)
+        
+    return pd_data
+
+
+
+def main(config: configparser.ConfigParser):
+
+    logging.info('Starting main process')
+
+    scrape_mode = config['PARSER']['scrape_mode']
+    json_path = config['PARSER']['mp_json_path']
+
+    if scrape_mode == 'True':
+        logging.debug('Getting data from api')
+        url = config['PARSER']['members_url']
+        r = raise_request(url, headers=cfg_get_dict(config, 'PARSER', 'headers'))
+
+        data, r = jsonify_response(r)
+        write_to_json(data, json_path)
+
+        full_member_data = json_to_pd(data['Members']['Member'],
+                                      cols={'@Member_Id': 'int64'})
+        # full_member_data = pd.json_normalize(data['Members']['Member'],
+        #                                      max_level=1)
+
+    # read from file
+    else:
+        logging.debug('Getting data from file')
+
+        def data_exists(path): return os.path.exists(path)
+
+        assert data_exists(json_path), \
+            logging.error('File {0} missing. Rerun in scrape mode by '
+                          'setting scrape_mode in config'.format(json_path))
+
+        with open(json_path) as f:
+            data = json.load(f)
+        full_member_data = json_to_pd(data['Members']['Member'],
+                                      cols={'@Member_Id': 'int64'})
+
+
+    logging.debug('Found full mp data of shape: {0}'.format(
+        full_member_data.shape))
+
+    mp_cols = cfg_get_list(config, 'PARSER', 'mp_cols')
+
+    core_mp_data = full_member_data[mp_cols]
+    logging.debug('Cut down to core shape: {0} and core columns: {1}'.format(
+        core_mp_data.shape, core_mp_data.columns))
+
+    characteristic_data = get_characteristics()
+    core_mp_data = add_characteristics(core_mp_data, characteristic_data)
+
+    core_mp_data.to_csv(config['PARSER']['full_mp_path'], header=True,
+                        index=False)
+
+
+def check_for_errors():
+    """
+    Posts warning messages if any warning files exist.
+    """
+    files = cfg_get_list(config, 'ERROR_CHECKING', 'files')
+
+    files = [file for file in files if os.path.exists(file)]
+
+    if len(files) > 0:
+        logging.warning('Following issue files exist:')
+
+        for file in files:
+            mod_time = dt.datetime.utcfromtimestamp(os.path.getmtime(file))
+            logging.warning("{0}, modified: {1}".format(file, mod_time))
+
+            issue = pd.read_csv(file)
+            logging.warning("Contains {0} records", len(issue))
+
+        logging.warning("For times occurring within last run, check files for "
+                        "issues.")
+
+
 if __name__ == "__main__":
 
     config = configparser.ConfigParser(delimiters=("="))
-    config.read('../dev_mpident.ini')
+    config.read('dev_mpident.ini')
 
     logging.basicConfig(
         level=logging.getLevelName(config['LOGGING']['level']),
@@ -182,5 +256,7 @@ if __name__ == "__main__":
     logging.info('begin')
 
     main(config)
+
+    check_for_errors()
 
     logging.info('fin')
