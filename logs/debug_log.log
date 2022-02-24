@@ -15579,3 +15579,83 @@
 2022-02-22 16:27:05,420 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
 2022-02-22 16:27:05,430 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
 2022-02-22 16:27:05,430 [INFO] fin
+2022-02-23 10:02:43,742 [INFO] begin
+2022-02-23 10:02:43,742 [INFO] Starting main process
+2022-02-23 10:02:43,742 [DEBUG] Getting data from file
+2022-02-23 10:02:43,787 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-23 10:02:43,787 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-23 10:02:43,788 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-23 10:02:43,788 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-23 10:02:43,792 [DEBUG] Adding characteristic data to core data
+2022-02-23 10:02:43,792 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-23 10:02:43,804 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-23 10:02:43,804 [INFO] fin
+2022-02-24 14:47:38,727 [INFO] begin
+2022-02-24 14:47:38,728 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:47:38,801 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:53:27,629 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:53:27,631 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:53:27,709 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:53:28,013 [ERROR] Issue with data source https://en.wikipedia.org/wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom - check header for MPs
+2022-02-24 14:54:14,342 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:54:14,345 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:54:14,452 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:54:30,891 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:54:30,899 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:54:30,975 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:56:21,888 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:56:21,890 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:56:21,994 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:56:22,303 [ERROR] Issue with data source url - section not matching.Expected 3 List of ethnic minority Members of Parliament". Found 3 List of ethnic minority Members of Parliament.
+2022-02-24 14:56:50,120 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:56:50,122 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:56:50,193 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:56:50,501 [ERROR] Issue with data source url - section not matching. 
+ Expected: "3 List of ethnic minority Members of Parliament"".
+ Found: "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:02,449 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:02,451 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:02,522 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:02,822 [ERROR] Issue with data source url - section not matching. 
+	 Expected: "3 List of ethnic minority Members of Parliament"".
+	 Found: "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:16,305 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:16,307 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:16,380 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:16,690 [ERROR] Issue with data source url - section not matching. 
+	 Expected:	 "3 List of ethnic minority Members of Parliament"".
+	 Found:	 "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:33,236 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:33,239 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:33,308 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:33,643 [ERROR] Issue with data source url - section not matching. 
+	 Expected:	 "3 List of ethnic minority Members of Parliament"".
+	 Found:   	 "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:47,646 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:47,648 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:47,809 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:54,126 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:54,128 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:54,198 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:58:44,792 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:58:44,794 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:58:45,030 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:58:45,368 [INFO] Found ethnicity data for 113 MPs
+2022-02-24 15:10:01,749 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:10:01,751 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:10:01,879 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:10:08,246 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:10:08,248 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:10:08,345 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:10:08,670 [INFO] Found ethnicity data for 66 current MPs
+2022-02-24 15:10:16,540 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:10:16,542 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:10:16,605 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:10:16,961 [INFO] Found ethnicity data for 66 current MPs
+2022-02-24 15:49:13,515 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:49:13,516 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:49:13,773 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:49:14,205 [INFO] Found ethnicity data for 66 current MPs
