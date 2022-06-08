@@ -15579,3 +15579,296 @@
 2022-02-22 16:27:05,420 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
 2022-02-22 16:27:05,430 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
 2022-02-22 16:27:05,430 [INFO] fin
+2022-02-23 10:02:43,742 [INFO] begin
+2022-02-23 10:02:43,742 [INFO] Starting main process
+2022-02-23 10:02:43,742 [DEBUG] Getting data from file
+2022-02-23 10:02:43,787 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-23 10:02:43,787 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-23 10:02:43,788 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-23 10:02:43,788 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-23 10:02:43,792 [DEBUG] Adding characteristic data to core data
+2022-02-23 10:02:43,792 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-23 10:02:43,804 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-23 10:02:43,804 [INFO] fin
+2022-02-24 14:47:38,727 [INFO] begin
+2022-02-24 14:47:38,728 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:47:38,801 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:53:27,629 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:53:27,631 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:53:27,709 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:53:28,013 [ERROR] Issue with data source https://en.wikipedia.org/wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom - check header for MPs
+2022-02-24 14:54:14,342 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:54:14,345 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:54:14,452 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:54:30,891 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:54:30,899 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:54:30,975 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:56:21,888 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:56:21,890 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:56:21,994 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:56:22,303 [ERROR] Issue with data source url - section not matching.Expected 3 List of ethnic minority Members of Parliament". Found 3 List of ethnic minority Members of Parliament.
+2022-02-24 14:56:50,120 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:56:50,122 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:56:50,193 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:56:50,501 [ERROR] Issue with data source url - section not matching. 
+ Expected: "3 List of ethnic minority Members of Parliament"".
+ Found: "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:02,449 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:02,451 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:02,522 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:02,822 [ERROR] Issue with data source url - section not matching. 
+	 Expected: "3 List of ethnic minority Members of Parliament"".
+	 Found: "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:16,305 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:16,307 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:16,380 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:16,690 [ERROR] Issue with data source url - section not matching. 
+	 Expected:	 "3 List of ethnic minority Members of Parliament"".
+	 Found:	 "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:33,236 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:33,239 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:33,308 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:33,643 [ERROR] Issue with data source url - section not matching. 
+	 Expected:	 "3 List of ethnic minority Members of Parliament"".
+	 Found:   	 "3 List of ethnic minority Members of Parliament".
+2022-02-24 14:57:47,646 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:47,648 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:47,809 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:57:54,126 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:57:54,128 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:57:54,198 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:58:44,792 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 14:58:44,794 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 14:58:45,030 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 14:58:45,368 [INFO] Found ethnicity data for 113 MPs
+2022-02-24 15:10:01,749 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:10:01,751 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:10:01,879 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:10:08,246 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:10:08,248 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:10:08,345 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:10:08,670 [INFO] Found ethnicity data for 66 current MPs
+2022-02-24 15:10:16,540 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:10:16,542 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:10:16,605 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:10:16,961 [INFO] Found ethnicity data for 66 current MPs
+2022-02-24 15:49:13,515 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-24 15:49:13,516 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-24 15:49:13,773 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69094
+2022-02-24 15:49:14,205 [INFO] Found ethnicity data for 66 current MPs
+2022-02-25 09:44:18,234 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-02-25 09:44:18,237 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-02-25 09:44:18,462 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 None
+2022-02-25 09:44:18,940 [INFO] Found ethnicity data for 66 current MPs
+2022-02-25 09:44:21,727 [INFO] begin
+2022-02-25 09:44:21,728 [INFO] Starting main process
+2022-02-25 09:44:21,728 [DEBUG] Getting data from file
+2022-02-25 09:44:21,772 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-25 09:44:21,772 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-25 09:44:21,775 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-25 09:44:21,775 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-25 09:44:21,779 [DEBUG] Adding characteristic data to core data
+2022-02-25 09:44:21,779 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-25 09:44:32,428 [INFO] begin
+2022-02-25 09:44:32,429 [INFO] Starting main process
+2022-02-25 09:44:32,429 [DEBUG] Getting data from file
+2022-02-25 09:44:32,469 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-25 09:44:32,470 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-25 09:44:32,470 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-25 09:44:32,471 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-25 09:44:32,473 [DEBUG] Adding characteristic data to core data
+2022-02-25 09:44:32,474 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-25 09:44:32,516 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-25 09:44:32,516 [INFO] fin
+2022-02-25 09:45:47,224 [INFO] begin
+2022-02-25 09:45:47,224 [INFO] Starting main process
+2022-02-25 09:45:47,224 [DEBUG] Getting data from file
+2022-02-25 09:45:47,265 [DEBUG] Found full mp data of shape: (649, 25)
+2022-02-25 09:45:47,266 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-02-25 09:45:47,267 [DEBUG] Cut down to core shape: (649, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-02-25 09:45:47,267 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-02-25 09:45:47,270 [DEBUG] Adding characteristic data to core data
+2022-02-25 09:45:47,270 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-02-25 09:45:47,314 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-02-25 09:45:47,314 [INFO] fin
+2022-05-04 13:57:05,294 [INFO] begin
+2022-05-04 13:57:05,294 [INFO] Starting main process
+2022-05-04 13:57:05,294 [DEBUG] Getting data from api
+2022-05-04 13:57:05,295 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-05-04 13:57:05,303 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-05-04 13:57:05,624 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-05-04 13:57:05,629 [DEBUG] Converting response data to json style data as a dict
+2022-05-04 13:57:05,636 [INFO] Dumping to data/raw_mps.json
+2022-05-04 13:57:08,184 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-05-04 12:57:08.180589.
+2022-05-04 13:57:08,398 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-04 13:57:08,398 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-04 13:57:08,401 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-04 13:57:08,401 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-04 13:57:08,407 [DEBUG] Adding characteristic data to core data
+2022-05-04 13:57:08,407 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-04 13:57:08,433 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-05-04 13:57:08,433 [INFO] fin
+2022-05-04 14:14:19,366 [INFO] begin
+2022-05-04 14:14:19,366 [INFO] Starting main process
+2022-05-04 14:14:19,366 [DEBUG] Getting data from file
+2022-05-04 14:14:19,405 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-04 14:14:19,405 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-04 14:14:19,406 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-04 14:14:19,406 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-04 14:14:19,408 [DEBUG] Adding characteristic data to core data
+2022-05-04 14:14:19,408 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-04 14:14:19,414 [WARNING] Missing characteristics for 2 MPs in data/identifiers.csv
+2022-05-04 14:14:19,414 [WARNING] Writing details of missing data to logs/missing_identifiers.csv
+2022-05-04 14:14:19,420 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-05-04 14:14:19,420 [WARNING] Following issue files exist:
+2022-05-04 14:14:19,420 [WARNING] logs/missing_identifiers.csv, modified: 2022-05-04 13:14:19.411355
+2022-05-04 14:14:19,422 [WARNING] For times occurring within last run, check files for issues.
+2022-05-04 14:14:19,422 [INFO] fin
+2022-05-04 14:14:42,779 [INFO] begin
+2022-05-04 14:14:42,779 [INFO] Starting main process
+2022-05-04 14:14:42,779 [DEBUG] Getting data from file
+2022-05-04 14:14:42,817 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-04 14:14:42,818 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-04 14:14:42,818 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-04 14:14:42,819 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-04 14:14:42,821 [DEBUG] Adding characteristic data to core data
+2022-05-04 14:14:42,821 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-04 14:14:42,828 [WARNING] Missing characteristics for 2 MPs in data/identifiers.csv
+2022-05-04 14:14:42,828 [WARNING] Writing details of missing data to logs/missing_identifiers.csv
+2022-05-04 14:14:42,835 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-05-04 14:14:42,835 [WARNING] Following issue files exist:
+2022-05-04 14:14:42,835 [WARNING] logs/missing_identifiers.csv, modified: 2022-05-04 13:14:42.827521
+2022-05-04 14:14:42,837 [WARNING] Contains 2 records
+2022-05-04 14:14:42,837 [WARNING] For times occurring within last run, check files for issues.
+2022-05-04 14:14:42,837 [INFO] fin
+2022-05-06 14:34:33,608 [INFO] begin
+2022-05-06 14:34:33,608 [INFO] Starting main process
+2022-05-06 14:34:54,205 [INFO] begin
+2022-05-06 14:34:54,205 [INFO] Starting main process
+2022-05-06 14:34:54,205 [DEBUG] Getting data from file
+2022-05-06 14:34:54,251 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-06 14:34:54,251 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-06 14:34:54,254 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-06 14:34:54,254 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-06 14:34:54,258 [DEBUG] Adding characteristic data to core data
+2022-05-06 14:34:54,258 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-06 14:34:54,273 [WARNING] Missing characteristics for 2 MPs in data/identifiers.csv
+2022-05-06 14:34:54,273 [WARNING] Writing details of missing data to logs/missing_identifiers.csv
+2022-05-06 14:34:54,280 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-05-06 14:34:54,281 [WARNING] Following issue files exist:
+2022-05-06 14:34:54,281 [WARNING] logs/missing_identifiers.csv, modified: 2022-05-06 13:34:54.269618
+2022-05-06 14:34:54,282 [WARNING] Contains 2 records
+2022-05-06 14:34:54,282 [WARNING] For times occurring within last run, check files for issues.
+2022-05-06 14:34:54,282 [INFO] fin
+2022-05-06 14:35:13,719 [INFO] begin
+2022-05-06 14:35:13,719 [INFO] Starting main process
+2022-05-06 14:35:13,719 [DEBUG] Getting data from api
+2022-05-06 14:35:13,719 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-05-06 14:35:13,722 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-05-06 14:35:14,052 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-05-06 14:35:14,105 [DEBUG] Converting response data to json style data as a dict
+2022-05-06 14:35:14,115 [INFO] Dumping to data/raw_mps.json
+2022-05-06 14:35:14,141 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-05-06 13:35:14.138513.
+2022-05-06 14:35:14,177 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-06 14:35:14,178 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-06 14:35:14,179 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-06 14:35:14,179 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-06 14:35:14,181 [DEBUG] Adding characteristic data to core data
+2022-05-06 14:35:14,182 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-06 14:35:14,188 [WARNING] Missing characteristics for 2 MPs in data/identifiers.csv
+2022-05-06 14:35:14,188 [WARNING] Writing details of missing data to logs/missing_identifiers.csv
+2022-05-06 14:35:14,195 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-05-06 14:35:14,195 [WARNING] Following issue files exist:
+2022-05-06 14:35:14,195 [WARNING] logs/missing_identifiers.csv, modified: 2022-05-06 13:35:14.186515
+2022-05-06 14:35:14,196 [WARNING] Contains 2 records
+2022-05-06 14:35:14,196 [WARNING] For times occurring within last run, check files for issues.
+2022-05-06 14:35:14,196 [INFO] fin
+2022-05-06 14:39:29,206 [INFO] begin
+2022-05-06 14:39:39,951 [DEBUG] Getting data from api
+2022-05-06 14:39:39,951 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-05-06 14:39:39,953 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-05-06 14:39:40,175 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-05-06 14:39:40,232 [DEBUG] Converting response data to json style data as a dict
+2022-05-06 14:39:40,241 [INFO] Dumping to data/raw_mps.json
+2022-05-06 14:39:40,265 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-05-06 13:39:40.262896.
+2022-05-06 14:39:40,302 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-06 14:39:57,426 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-06 14:46:52,517 [DEBUG] Parsing config value as a list: PARSER:titles
+2022-05-06 15:08:34,182 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-06 15:08:53,801 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-06 15:29:41,972 [DEBUG] Getting data from api
+2022-05-06 15:29:41,972 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-05-06 15:29:41,974 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-05-06 15:29:42,284 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-05-06 15:29:42,291 [DEBUG] Converting response data to json style data as a dict
+2022-05-06 15:29:42,296 [INFO] Dumping to data/raw_mps.json
+2022-05-06 15:29:42,320 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-05-06 14:29:42.316927.
+2022-05-06 15:29:42,355 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-06 15:30:15,856 [DEBUG] Getting data from api
+2022-05-06 15:30:15,857 [DEBUG] Parsing config value as a dict: PARSER:headers
+2022-05-06 15:30:15,858 [DEBUG] Starting new HTTP connection (1): data.parliament.uk:80
+2022-05-06 15:30:16,179 [DEBUG] http://data.parliament.uk:80 "GET /membersdataplatform/services/mnis/members/query/House=Commons%7CIsEligible=true/ HTTP/1.1" 200 None
+2022-05-06 15:30:16,195 [DEBUG] Converting response data to json style data as a dict
+2022-05-06 15:30:16,205 [INFO] Dumping to data/raw_mps.json
+2022-05-06 15:30:16,230 [DEBUG] Dump complete. Status unknown: File exists, last modified: 2022-05-06 14:30:16.225359.
+2022-05-06 15:30:16,267 [DEBUG] Found full mp data of shape: (648, 25)
+2022-05-06 15:30:17,497 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-06 15:30:17,498 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-06 15:30:18,938 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-05-06 15:30:42,587 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-06 15:30:42,589 [DEBUG] Cut down to core shape: (648, 11) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text'],
+      dtype='object')
+2022-05-06 15:31:17,096 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-05-06 15:31:17,097 [DEBUG] Parsing config value as a list: PARSER:titles
+2022-05-06 15:31:20,341 [DEBUG] Cut down to core shape: (648, 12) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text', 'clearName'],
+      dtype='object')
+2022-05-06 15:31:51,254 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-05-06 15:32:54,162 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-05-06 15:33:07,061 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 13:29:55,383 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-06-08 13:29:55,386 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-06-08 13:29:55,527 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69756
+2022-06-08 13:29:55,854 [INFO] Found ethnicity data for 66 current MPs
+2022-06-08 13:32:22,666 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-06-08 13:32:22,666 [DEBUG] Fetching and processing ethnicity data.
+2022-06-08 13:32:22,669 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-06-08 13:32:22,779 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69756
+2022-06-08 13:32:23,127 [DEBUG] Parsing HTML table
+2022-06-08 13:32:23,135 [DEBUG] HTML table parsed.
+2022-06-08 13:32:23,135 [DEBUG] Cleaning ethnicity data.
+2022-06-08 13:32:23,138 [DEBUG] Ethnicity data cleaned.
+2022-06-08 13:32:23,138 [INFO] Found ethnicity data for 66 current MPs

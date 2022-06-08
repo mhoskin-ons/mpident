@@ -124,10 +124,8 @@ if __name__ == "__main__":
 
     mp_data_path = '../' + config['PARSER']['mp_json_path']
 
-
     # simple local function for allowing assert to log error message
     def data_exists(path): return os.path.exists(path)
-
 
     assert data_exists(mp_data_path), \
         logging.error('{0} file not found. Run code to download data from api '

@@ -144,12 +144,26 @@ def add_characteristics(member_data: pd.DataFrame,
 
     logging.debug('Adding characteristic data to core data')
 
-    member_data = pd.merge(member_data, characteristic_data,
+    merged_data = pd.merge(member_data, characteristic_data,
                            on=cfg_get_list(config, 'PARSER',
                                            'characteristic_merge'),
                            how='left', indicator=True)
 
-    missing_characteristics = member_data[member_data['_merge'] == 'False']
+    missing_characteristics = merged_data[merged_data['_merge'] == 'left_only']
+    missing_characteristics = missing_characteristics[['@Member_Id']]
+
+    missing_member_data = member_data[member_data['@Member_Id'].isin(
+        missing_characteristics['@Member_Id'])]
+
+    missing_member_data = pd.merge(missing_member_data, characteristic_data,
+                                   on=cfg_get_list(config, 'PARSER',
+                                                   'characteristic_merge_excess'),
+                                   how='left',
+                                   indicator=True)
+
+    missing_characteristics = (missing_member_data[
+                                missing_member_data['_merge'] == 'left_only'])
+    matched_members = pd.concat([merged_data, missing_member_data])
 
     if not missing_characteristics.empty:
         report_missing_characteristics(missing_characteristics)
@@ -163,55 +177,100 @@ def json_to_pd(json_data: list, cols: dict, max_level=1):
 
     for col, col_type in cols.items():
         pd_data[col] = pd_data[col].astype(col_type)
-        
+
     return pd_data
 
 
+def scrape_mp_data(config: configparser.ConfigParser):
+    logging.debug('Getting data from api')
 
-def main(config: configparser.ConfigParser):
+    json_path = config['PARSER']['mp_json_path']
+    url = config['PARSER']['members_url']
 
-    logging.info('Starting main process')
+    r = raise_request(url, headers=cfg_get_dict(config, 'PARSER', 'headers'))
 
-    scrape_mode = config['PARSER']['scrape_mode']
+    data, r = jsonify_response(r)
+    write_to_json(data, json_path)
+
+    full_member_data = json_to_pd(data['Members']['Member'],
+                                  cols={'@Member_Id': 'int64'})
+
+    return full_member_data
+
+
+def read_local_mp_data(config: configparser.ConfigParser):
+    logging.debug('Getting data from file')
+
     json_path = config['PARSER']['mp_json_path']
 
+    def data_exists(path): return os.path.exists(path)
+
+    assert data_exists(json_path), \
+        logging.error('File {0} missing. Rerun in scrape mode by '
+                      'setting scrape_mode in config'.format(json_path))
+
+    with open(json_path) as f:
+        data = json.load(f)
+
+    full_member_data = json_to_pd(data['Members']['Member'],
+                                  cols={'@Member_Id': 'int64'})
+
+    return full_member_data
+
+
+def get_mp_data(config: configparser.ConfigParser):
+
+    scrape_mode = config['PARSER']['scrape_mode']
+
     if scrape_mode == 'True':
-        logging.debug('Getting data from api')
-        url = config['PARSER']['members_url']
-        r = raise_request(url, headers=cfg_get_dict(config, 'PARSER', 'headers'))
-
-        data, r = jsonify_response(r)
-        write_to_json(data, json_path)
-
-        full_member_data = json_to_pd(data['Members']['Member'],
-                                      cols={'@Member_Id': 'int64'})
-        # full_member_data = pd.json_normalize(data['Members']['Member'],
-        #                                      max_level=1)
-
-    # read from file
+        full_member_data = scrape_mp_data(config)
     else:
-        logging.debug('Getting data from file')
-
-        def data_exists(path): return os.path.exists(path)
-
-        assert data_exists(json_path), \
-            logging.error('File {0} missing. Rerun in scrape mode by '
-                          'setting scrape_mode in config'.format(json_path))
-
-        with open(json_path) as f:
-            data = json.load(f)
-        full_member_data = json_to_pd(data['Members']['Member'],
-                                      cols={'@Member_Id': 'int64'})
-
+        full_member_data = read_local_mp_data(config)
 
     logging.debug('Found full mp data of shape: {0}'.format(
         full_member_data.shape))
 
-    mp_cols = cfg_get_list(config, 'PARSER', 'mp_cols')
+    return full_member_data
 
+
+def clean_mp_data(config: configparser.ConfigParser,
+                  full_member_data: pd.DataFrame):
+
+    # Keep only desired columns.
+    mp_cols = cfg_get_list(config, 'PARSER', 'mp_cols')
     core_mp_data = full_member_data[mp_cols]
+
+    # Create clean name column - no titles or honourifics.
+    titles = cfg_get_list(config, 'PARSER', 'titles')
+    core_mp_data['clearName'] = core_mp_data['DisplayAs'].str.replace(
+        '|'.join(titles), '').str.strip()
+
     logging.debug('Cut down to core shape: {0} and core columns: {1}'.format(
         core_mp_data.shape, core_mp_data.columns))
+
+    return core_mp_data
+
+
+def main(config: configparser.ConfigParser):
+    """
+    Begins main system processing.
+
+    Currently:
+    - Gets MP data
+    - Cleans it appropriately
+    - Fetches characteristic data, and appends to MP data.
+    - Exports
+
+    Parameters
+    ----------
+    config: configparser.ConfigParser
+        Contents of a config file for use in main system
+    """
+    logging.info('Starting main process')
+
+    full_member_data = get_mp_data(config)
+
+    core_mp_data = clean_mp_data(config, full_member_data)
 
     characteristic_data = get_characteristics()
     core_mp_data = add_characteristics(core_mp_data, characteristic_data)
@@ -223,6 +282,10 @@ def main(config: configparser.ConfigParser):
 def check_for_errors():
     """
     Posts warning messages if any warning files exist.
+
+    Looks for all files within specified list of error files from the config.
+    Lists any files that exist, the last modification time, and the number of
+    records contained within.
     """
     files = cfg_get_list(config, 'ERROR_CHECKING', 'files')
 
@@ -236,15 +299,15 @@ def check_for_errors():
             logging.warning("{0}, modified: {1}".format(file, mod_time))
 
             issue = pd.read_csv(file)
-            logging.warning("Contains {0} records", len(issue))
+            logging.warning("Contains {0} records".format(len(issue)))
 
-        logging.warning("For times occurring within last run, check files for "
-                        "issues.")
+        logging.warning("For modification times occurring within last run, "
+                        "check files for relevant issues.")
 
 
 if __name__ == "__main__":
 
-    config = configparser.ConfigParser(delimiters=("="))
+    config = configparser.ConfigParser(delimiters="=")
     config.read('dev_mpident.ini')
 
     logging.basicConfig(
