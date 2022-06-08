@@ -15859,3 +15859,16 @@
 2022-05-06 15:31:51,254 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
 2022-05-06 15:32:54,162 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
 2022-05-06 15:33:07,061 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 13:29:55,383 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-06-08 13:29:55,386 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-06-08 13:29:55,527 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69756
+2022-06-08 13:29:55,854 [INFO] Found ethnicity data for 66 current MPs
+2022-06-08 13:32:22,666 [INFO] Beginning standalone ethnicity scrape from Wikipedia
+2022-06-08 13:32:22,666 [DEBUG] Fetching and processing ethnicity data.
+2022-06-08 13:32:22,669 [DEBUG] Starting new HTTPS connection (1): en.wikipedia.org:443
+2022-06-08 13:32:22,779 [DEBUG] https://en.wikipedia.org:443 "GET /wiki/List_of_ethnic_minority_politicians_in_the_United_Kingdom HTTP/1.1" 200 69756
+2022-06-08 13:32:23,127 [DEBUG] Parsing HTML table
+2022-06-08 13:32:23,135 [DEBUG] HTML table parsed.
+2022-06-08 13:32:23,135 [DEBUG] Cleaning ethnicity data.
+2022-06-08 13:32:23,138 [DEBUG] Ethnicity data cleaned.
+2022-06-08 13:32:23,138 [INFO] Found ethnicity data for 66 current MPs

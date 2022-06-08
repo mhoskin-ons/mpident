@@ -1,12 +1,13 @@
+"""Uses wikipedia page for list of ethnic minority politicians in the UK to
+build a clean table of MP Ethnicities"""
+import logging
+import configparser
+
 import bs4
 import pandas as pd
 from bs4 import BeautifulSoup
 
-import logging
-import configparser
-
 from src.main import raise_request
-from src.config_tools import cfg_get_list
 
 
 def parse_bs_table(table: bs4.Tag):
@@ -33,7 +34,7 @@ def parse_bs_table(table: bs4.Tag):
     Will not handle column spans at this point. Will require some
     duplication of carrying cells down a row to carry cells across a column.
     """
-
+    logging.debug("Parsing HTML table.")
     # First, get headers - <th> tags, and remove any empty values
     headers = [item.get_text().strip() for item in table.find_all('th')]
     headers = [h for h in headers if h != '']
@@ -95,6 +96,8 @@ def parse_bs_table(table: bs4.Tag):
 
     data = pd.DataFrame(data=row_data, columns=headers)
 
+    logging.debug('HTML table parsed.')
+
     return data
 
 
@@ -120,7 +123,7 @@ def clean_ethnicity(data: pd.DataFrame, name_col='Name',
     data: pd.DataFrame
         Cleaned ethnicity data
     """
-
+    logging.debug('Cleaning ethnicity data.')
     # Remove citations from names
     data[name_col] = data[name_col].str.split('[', expand=True)[0]
 
@@ -133,6 +136,8 @@ def clean_ethnicity(data: pd.DataFrame, name_col='Name',
 
     # drop portrait, years
     data = data.drop(columns=['Portrait', 'Year elected', 'Year left'])
+
+    logging.debug('Ethnicity data cleaned.')
 
     return data
 
@@ -153,7 +158,7 @@ def get_mp_ethnicity(config: configparser.ConfigParser):
     ethnicity_data: pd.DataFrame
         Table containing clean ethnicity data for MPs from ethnic minorities.
     """
-
+    logging.debug("Fetching and processing ethnicity data.")
     url = config['ETHNICITY']['url']
     res = raise_request(url)
 
@@ -182,7 +187,7 @@ def get_mp_ethnicity(config: configparser.ConfigParser):
 
 if __name__ == "__main__":
 
-    config = configparser.ConfigParser(delimiters=("="))
+    config = configparser.ConfigParser(delimiters="=")
     config.read('dev_mpident.ini')
 
     logging.basicConfig(
@@ -191,8 +196,8 @@ if __name__ == "__main__":
         handlers=[logging.StreamHandler(),
                   logging.FileHandler(config['LOGGING']['file'])]
     )
-    logging.info('Beginning standalone ethnicity scrape from Wikipedia')
+    logging.info('Beginning standalone ethnicity scrape from Wikipedia.')
     final_ethnicity_data = get_mp_ethnicity(config)
 
-    logging.info('Found ethnicity data for {0} current MPs'
+    logging.info('Found ethnicity data for {0} current MPs.'
                  .format(len(final_ethnicity_data)))
