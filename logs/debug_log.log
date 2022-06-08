@@ -15872,3 +15872,70 @@
 2022-06-08 13:32:23,135 [DEBUG] Cleaning ethnicity data.
 2022-06-08 13:32:23,138 [DEBUG] Ethnicity data cleaned.
 2022-06-08 13:32:23,138 [INFO] Found ethnicity data for 66 current MPs
+2022-06-08 15:25:39,667 [INFO] begin
+2022-06-08 15:26:01,667 [DEBUG] Getting data from file
+2022-06-08 15:26:01,712 [DEBUG] Found full mp data of shape: (648, 25)
+2022-06-08 15:26:03,831 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-06-08 15:26:03,832 [DEBUG] Parsing config value as a list: PARSER:titles
+2022-06-08 15:26:03,877 [DEBUG] Cut down to core shape: (648, 12) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text', 'clearName'],
+      dtype='object')
+2022-06-08 15:26:27,211 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-06-08 15:26:35,722 [DEBUG] Adding characteristic data to core data
+2022-06-08 15:26:56,181 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-06-08 15:27:51,864 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:28:33,212 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-06-08 15:28:33,214 [DEBUG] Parsing config value as a list: PARSER:titles
+2022-06-08 15:28:33,217 [DEBUG] Cut down to core shape: (648, 12) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text', 'clearName'],
+      dtype='object')
+2022-06-08 15:29:03,771 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-06-08 15:29:19,574 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:35:11,854 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-06-08 15:35:24,398 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-06-08 15:35:40,818 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:37:19,997 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:37:31,844 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:38:13,265 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:54:01,881 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-06-08 15:54:04,641 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:55:07,187 [INFO] begin
+2022-06-08 15:55:12,177 [DEBUG] Getting data from file
+2022-06-08 15:55:12,220 [DEBUG] Found full mp data of shape: (648, 25)
+2022-06-08 15:55:13,865 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-06-08 15:55:13,866 [DEBUG] Parsing config value as a list: PARSER:titles
+2022-06-08 15:55:13,906 [DEBUG] Cut down to core shape: (648, 12) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text', 'clearName'],
+      dtype='object')
+2022-06-08 15:55:16,679 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-06-08 15:55:38,223 [DEBUG] Adding characteristic data to core data
+2022-06-08 15:55:39,311 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-06-08 15:55:44,122 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 15:58:19,923 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-06-08 15:58:38,885 [WARNING] Missing characteristics for 1 MPs in data/identifiers.csv
+2022-06-08 15:58:44,621 [WARNING] Writing details of missing data to logs/missing_identifiers.csv
+2022-06-08 16:14:01,233 [WARNING] Appending missing characteristic records to default characteristic data - will need expanding with user-filled values.
+2022-06-08 16:15:26,794 [WARNING] Appending missing characteristic records to default characteristic data - will need expanding with user-filled values.
+2022-06-08 16:22:48,078 [INFO] begin
+2022-06-08 16:22:48,078 [INFO] Starting main process
+2022-06-08 16:22:48,078 [DEBUG] Getting data from file
+2022-06-08 16:22:48,119 [DEBUG] Found full mp data of shape: (648, 25)
+2022-06-08 16:22:48,119 [DEBUG] Parsing config value as a list: PARSER:mp_cols
+2022-06-08 16:22:48,120 [DEBUG] Parsing config value as a list: PARSER:titles
+2022-06-08 16:22:48,152 [DEBUG] Cut down to core shape: (648, 12) and core columns: Index(['@Member_Id', 'DisplayAs', 'ListAs', 'FullTitle', 'LayingMinisterName',
+       'Gender', 'House', 'MemberFrom', 'HouseStartDate', 'Party.@Id',
+       'Party.#text', 'clearName'],
+      dtype='object')
+2022-06-08 16:22:48,152 [DEBUG] Reading characteristic data from data/identifiers.csv
+2022-06-08 16:22:48,155 [DEBUG] Adding characteristic data to core data
+2022-06-08 16:22:48,155 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge
+2022-06-08 16:22:48,155 [DEBUG] Parsing config value as a list: PARSER:characteristic_merge_excess
+2022-06-08 16:22:48,173 [DEBUG] Parsing config value as a list: ERROR_CHECKING:files
+2022-06-08 16:22:48,173 [WARNING] Following issue files exist:
+2022-06-08 16:22:48,174 [WARNING] logs/missing_identifiers.csv, modified: 2022-06-08 15:01:08.180682
+2022-06-08 16:22:48,175 [WARNING] Contains 3 records
+2022-06-08 16:22:48,175 [WARNING] For modification times occurring within last run, check files for relevant issues.
+2022-06-08 16:22:48,175 [INFO] fin
