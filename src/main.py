@@ -101,6 +101,7 @@ def write_to_json(data: dict,
 def get_characteristics():
     """
     Reads the manually created characteristic data.
+
     Returns
     -------
     pd.DataFrame
@@ -114,8 +115,8 @@ def get_characteristics():
     return characteristic_data
 
 
-def report_missing_characteristics(missing_characteristics: pd.DataFrame,
-                                   config: configparser.ConfigParser):
+def report_missing_characteristics(config: configparser.ConfigParser,
+                                   missing_characteristics: pd.DataFrame):
     """
     Takes a dataframe which is missing matching characteristics, and writes
     the details to a file.
@@ -220,7 +221,7 @@ def add_characteristics(config: configparser.ConfigParser,
     matched_members = pd.concat([primary_merge, secondary_merge])
 
     if not missing_characteristics.empty:
-        report_missing_characteristics(missing_characteristics)
+        report_missing_characteristics(config, missing_characteristics)
 
     return matched_members
 
