@@ -250,12 +250,23 @@ def clean_mp_data(config: configparser.ConfigParser,
 
     return core_mp_data
 
+
 def main(config: configparser.ConfigParser):
+    """
+    Begins main system processing.
 
+    Currently:
+    - Gets MP data
+    - Cleans it appropriately
+    - Fetches characteristic data, and appends to MP data.
+    - Exports
+
+    Parameters
+    ----------
+    config: configparser.ConfigParser
+        Contents of a config file for use in main system
+    """
     logging.info('Starting main process')
-
-    # scrape_mode = config['PARSER']['scrape_mode']
-    # json_path = config['PARSER']['mp_json_path']
 
     full_member_data = get_mp_data(config)
 
@@ -264,8 +275,6 @@ def main(config: configparser.ConfigParser):
     characteristic_data = get_characteristics()
     core_mp_data = add_characteristics(core_mp_data, characteristic_data)
 
-
-
     core_mp_data.to_csv(config['PARSER']['full_mp_path'], header=True,
                         index=False)
 
@@ -273,6 +282,10 @@ def main(config: configparser.ConfigParser):
 def check_for_errors():
     """
     Posts warning messages if any warning files exist.
+
+    Looks for all files within specified list of error files from the config.
+    Lists any files that exist, the last modification time, and the number of
+    records contained within.
     """
     files = cfg_get_list(config, 'ERROR_CHECKING', 'files')
 
@@ -288,13 +301,13 @@ def check_for_errors():
             issue = pd.read_csv(file)
             logging.warning("Contains {0} records".format(len(issue)))
 
-        logging.warning("For times occurring within last run, check files for "
-                        "issues.")
+        logging.warning("For modification times occurring within last run, "
+                        "check files for relevant issues.")
 
 
 if __name__ == "__main__":
 
-    config = configparser.ConfigParser(delimiters=("="))
+    config = configparser.ConfigParser(delimiters="=")
     config.read('dev_mpident.ini')
 
     logging.basicConfig(

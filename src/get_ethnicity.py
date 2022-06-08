@@ -1,7 +1,5 @@
 import bs4
 import pandas as pd
-import requests
-import logging
 from bs4 import BeautifulSoup
 
 import logging
@@ -101,8 +99,27 @@ def parse_bs_table(table: bs4.Tag):
 
 
 def clean_ethnicity(data: pd.DataFrame, name_col='Name',
-                    ethnicity_col = 'Ethnicity',
-                    status_col = 'Reason for tenure ending'):
+                    ethnicity_col='Ethnicity',
+                    status_col='Reason for tenure ending'):
+    """
+    Takes raw ethnicity data scraped from wikipedia, removes citations,
+    removes all non-current MPs, and drops unnecessary columns.
+
+    Parameters
+    ----------
+    data: pd.DataFrame
+    name_col: String
+        Name of column containing names of individuals
+    ethnicity_col: String
+        Name of column containing ethnicities of individuals
+    status_col: String
+        Name of column containing current serving status.
+
+    Returns
+    -------
+    data: pd.DataFrame
+        Cleaned ethnicity data
+    """
 
     # Remove citations from names
     data[name_col] = data[name_col].str.split('[', expand=True)[0]
@@ -121,6 +138,21 @@ def clean_ethnicity(data: pd.DataFrame, name_col='Name',
 
 
 def get_mp_ethnicity(config: configparser.ConfigParser):
+    """
+    Uses BeautifulSoup to scrape information from wikipedia page for MP
+    ethnicities. Returns clean table of usable data for all currently serving
+    MPs of an ethnic minority.
+
+    Parameters
+    ----------
+    config: configparser.ConfigParser
+        Contents of config file
+
+    Returns
+    -------
+    ethnicity_data: pd.DataFrame
+        Table containing clean ethnicity data for MPs from ethnic minorities.
+    """
 
     url = config['ETHNICITY']['url']
     res = raise_request(url)
@@ -160,9 +192,7 @@ if __name__ == "__main__":
                   logging.FileHandler(config['LOGGING']['file'])]
     )
     logging.info('Beginning standalone ethnicity scrape from Wikipedia')
-    data = get_mp_ethnicity(config)
+    final_ethnicity_data = get_mp_ethnicity(config)
 
-    logging.info('Found ethnicity data for {0} current MPs'.format(len(data)))
-
-    #    data[name_col] = data[name_col].str.replace('|'.join(['Mr','Ms']), '')
-
+    logging.info('Found ethnicity data for {0} current MPs'
+                 .format(len(final_ethnicity_data)))
