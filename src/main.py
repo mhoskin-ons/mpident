@@ -114,13 +114,20 @@ def get_characteristics():
     return characteristic_data
 
 
-def report_missing_characteristics(missing_characteristics: pd.DataFrame):
+def report_missing_characteristics(missing_characteristics: pd.DataFrame,
+                                   config: configparser.ConfigParser):
     """
     Takes a dataframe which is missing matching characteristics, and writes
     the details to a file.
 
+    Writes to a missing_identifiers log csv, and optionally if config value is
+    set, can also append the known data about the unknown MP to the default
+    identifiers csv.
+
     Parameters
     ----------
+    config : configparser.ConfigParser
+        Contents of config file
     missing_characteristics : pd.DataFrame
         DataFrame of records missing from characteristic data.
     """
@@ -136,39 +143,86 @@ def report_missing_characteristics(missing_characteristics: pd.DataFrame):
     key_details.insert(0, 'timestamp', now)
     key_details.insert(1, 'missing', 'identifiers.csv')
 
-    key_details.to_csv(warn_path, index=False)
+    key_details.to_csv(warn_path, mode='a', index=False)
+
+    if config['PARSER']['append_missing_characteristics'] == "True":
+        append_details = missing_characteristics[["@Member_Id", "DisplayAs",
+                                                  "ListAs", "clearName"]]
+        append_path = config['PARSER']['characteristic_path']
+
+        logging.warning("Appending missing characteristic records to default "
+                        "characteristic data - will need expanding with "
+                        "user-filled values.")
+        append_details.to_csv(append_path, mode='a', index=False, header=False)
 
 
-def add_characteristics(member_data: pd.DataFrame,
+def add_characteristics(config: configparser.ConfigParser,
+                        member_data: pd.DataFrame,
                         characteristic_data: pd.DataFrame):
+    """
+    Appends characteristics to members, where possible.
+
+    Will first merge on columns specified in characteristic_merge in config,
+    where failures occur will attempt to further merge on columns in
+    characteristic_merge_excess.
+
+    Resulting data will include successful matches from the first join,
+    and all records from the result of the second - successes OR failures -
+    note that this might mean some rows are missing characteristics. They
+    will be logged and handled in report_missing_characteristics.
+
+    Parameters
+    ----------
+    config: configparser.ConfigParser
+        Contents of config file
+    member_data : pd.DataFrame
+        MP member data from either scraped gov website, or local copy.
+    characteristic_data : pd.DataFrame
+        Characteristic data from compiled identifiers.csv file
+
+    Returns
+    -------
+    pd.DataFrame:
+        MP data with matching characteristic data where possible. If no
+        matching characteristic data will be found, MP will be included, but
+        characteristic columns will be blank
+    """
 
     logging.debug('Adding characteristic data to core data')
 
-    merged_data = pd.merge(member_data, characteristic_data,
-                           on=cfg_get_list(config, 'PARSER',
-                                           'characteristic_merge'),
-                           how='left', indicator=True)
+    default_columns = cfg_get_list(config, 'PARSER', 'characteristic_merge')
+    backup_columns = cfg_get_list(config, 'PARSER',
+                                  'characteristic_merge_excess')
 
-    missing_characteristics = merged_data[merged_data['_merge'] == 'left_only']
-    missing_characteristics = missing_characteristics[['@Member_Id']]
+    primary_merge = pd.merge(member_data, characteristic_data,
+                             on=default_columns, how='left', indicator=True)
 
+    # Split matched + unmatched out.
+    missing_characteristics = primary_merge[primary_merge['_merge'] ==
+                                            'left_only']
+    primary_merge = primary_merge[primary_merge['_merge'] == 'both']
+
+    # Get original data where failed to match
     missing_member_data = member_data[member_data['@Member_Id'].isin(
         missing_characteristics['@Member_Id'])]
 
-    missing_member_data = pd.merge(missing_member_data, characteristic_data,
-                                   on=cfg_get_list(config, 'PARSER',
-                                                   'characteristic_merge_excess'),
-                                   how='left',
-                                   indicator=True)
+    # Drop columns which will duplicate for backup merge
+    characteristic_data.drop(columns=['DisplayAs', 'ListAs'], inplace=True)
 
-    missing_characteristics = (missing_member_data[
-                                missing_member_data['_merge'] == 'left_only'])
-    matched_members = pd.concat([merged_data, missing_member_data])
+    # Merge on backup columns
+    secondary_merge = pd.merge(missing_member_data, characteristic_data,
+                               on=backup_columns, how='left', indicator=True)
+
+    # New missing_characteristics can overwrite previous
+    missing_characteristics = (secondary_merge[
+                                secondary_merge['_merge'] == 'left_only'])
+
+    matched_members = pd.concat([primary_merge, secondary_merge])
 
     if not missing_characteristics.empty:
         report_missing_characteristics(missing_characteristics)
 
-    return member_data
+    return matched_members
 
 
 def json_to_pd(json_data: list, cols: dict, max_level=1):
@@ -273,7 +327,8 @@ def main(config: configparser.ConfigParser):
     core_mp_data = clean_mp_data(config, full_member_data)
 
     characteristic_data = get_characteristics()
-    core_mp_data = add_characteristics(core_mp_data, characteristic_data)
+    core_mp_data = add_characteristics(config, core_mp_data,
+                                       characteristic_data)
 
     core_mp_data.to_csv(config['PARSER']['full_mp_path'], header=True,
                         index=False)
