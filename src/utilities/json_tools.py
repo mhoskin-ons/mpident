@@ -1,10 +1,10 @@
-# Contains methods for dealing with json data.
-
-import requests
+"""Contains methods for dealing with json data."""
 import json
 import logging
 import os
 import datetime as dt
+
+import requests
 import pandas as pd
 
 

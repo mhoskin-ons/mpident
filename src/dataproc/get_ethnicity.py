@@ -1,13 +1,13 @@
 """Uses wikipedia page for list of ethnic minority politicians in the UK to
-build a clean table of MP Ethnicities"""
+build a clean table of MP Ethnicities."""
 import logging
 import configparser
 
-import bs4
 import pandas as pd
+import bs4
 from bs4 import BeautifulSoup
 
-from src.main import raise_request
+from src.utilities.api_tools import raise_request
 
 
 def parse_bs_table(table: bs4.Tag):
