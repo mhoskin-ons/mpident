@@ -136,8 +136,14 @@ def clean_ethnicity(data: pd.DataFrame, name_col='Name',
 
     # drop portrait, years
     data = data.drop(columns=['Portrait', 'Year elected', 'Year left'])
+    data = data.drop(columns = [status_col])
 
-    logging.debug('Ethnicity data cleaned.')
+    # ethnicity value aggregation
+    data['agg_ethnicity'] = data['Ethnicity'].str.split('/', expand=True)[0]
+    data['agg_ethnicity'] = data['agg_ethnicity'].str.replace('British',
+                                                              '').str.strip()
+    data['agg_ethnicity'] = data['agg_ethnicity'].str.replace('Anglo-',
+                                                              '').str.strip()    logging.debug('Ethnicity data cleaned.')
 
     return data
 

@@ -98,9 +98,14 @@ def write_to_json(data: dict,
         logging.warning('Dump failed. Status unknown - File does not exist.')
 
 
-def get_characteristics():
+def get_characteristics(config: configparser.ConfigParser):
     """
     Reads the manually created characteristic data.
+
+    Parameters
+    ----------
+    config: configparser.ConfigParser
+        Contents of config file
 
     Returns
     -------
@@ -327,7 +332,7 @@ def main(config: configparser.ConfigParser):
 
     core_mp_data = clean_mp_data(config, full_member_data)
 
-    characteristic_data = get_characteristics()
+    characteristic_data = get_characteristics(config)
     core_mp_data = add_characteristics(config, core_mp_data,
                                        characteristic_data)
 
