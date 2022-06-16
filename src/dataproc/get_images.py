@@ -1,10 +1,9 @@
 import requests
 import configparser
-import logging
 import pandas as pd
 import os
 
-from src.config_tools import *
+from src.utilities.config_tools import *
 from src.main import raise_request
 
 

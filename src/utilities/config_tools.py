@@ -1,3 +1,4 @@
+# Contains methods for dealing with config files.
 import configparser
 import logging
 from typing import Callable
