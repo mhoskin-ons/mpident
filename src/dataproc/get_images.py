@@ -1,11 +1,13 @@
-import requests
+"""Fetch MP images from gov api."""
 import configparser
 import logging
-import pandas as pd
 import os
 
-from src.config_tools import *
-from src.main import raise_request
+import pandas as pd
+import requests
+
+import src.utilities.config_tools as ct
+from src.utilities.api_tools import raise_request
 
 
 def get_head_shot_type(config: configparser.ConfigParser,
@@ -81,7 +83,7 @@ def get_head_shots(config: configparser.ConfigParser, data: pd.DataFrame):
     logging.info('Beginning headshot api scrape.')
 
     base_image_url = config['HEADSHOTS']['image_base_url']
-    hex_dict = cfg_get_dict(config, 'HEADSHOTS', 'image_bytes')
+    hex_dict = ct.cfg_get_dict(config, 'HEADSHOTS', 'image_bytes')
 
     for index, row in data.iterrows():
         member_id = row[config['HEADSHOTS']['id_column']]
